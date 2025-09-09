@@ -1,22 +1,29 @@
-# existing lines ...
+# Streamlit app
 streamlit
-chromadb
+
+# Vector DB
+chromadb==0.4.24         # stable on Python 3.10/3.11
+pysqlite3-binary==0.5.2.post3  # only used if Cloud's sqlite lacks features; harmless otherwise
+
+# PDF & retrieval
 pymupdf
 sentence-transformers
 torch
 rank-bm25
 
+# Groq + OpenAI-compatible client
 groq
 openai>=1.30.0
 
+# Utilities
 pandas
 tqdm
 python-dotenv
 
-# pin these to avoid the PyArrow breakage
+# If you use the Evaluation tab with datasets:
 pyarrow<17
 datasets==2.18.0
 
-# optional (only if you actually use the Evaluation tab with RAGAS)
+# Optional (only if you actually use the RAGAS judge path)
 ragas
 langchain-openai
