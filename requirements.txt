@@ -1,4 +1,4 @@
-
+# existing lines ...
 streamlit
 chromadb
 pymupdf
@@ -6,16 +6,17 @@ sentence-transformers
 torch
 rank-bm25
 
-# Groq + OpenAI-compatible client
 groq
 openai>=1.30.0
 
-# Optional: evaluation utilities
 pandas
-datasets
 tqdm
 python-dotenv
 
-# Optional (only if you want RAGAS full metrics; safe to omit)
+# pin these to avoid the PyArrow breakage
+pyarrow<17
+datasets==2.18.0
+
+# optional (only if you actually use the Evaluation tab with RAGAS)
 ragas
 langchain-openai
