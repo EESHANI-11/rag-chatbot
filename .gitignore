@@ -1,0 +1,51 @@
+# ----------------------------
+# Python / build artifacts
+# ----------------------------
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.so
+*.egg-info/
+*.egg
+*.log
+
+# Virtual envs
+venv/
+.venv/
+ENV/
+env/
+
+# Local DB/cache you don't want in git
+memory.db
+
+# ----------------------------
+# Editors / OS
+# ----------------------------
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+
+# ----------------------------
+# App secrets
+# ----------------------------
+.env
+.streamlit/secrets.toml
+
+# ----------------------------
+# App runtime artifacts
+# ----------------------------
+# Keep your configured index at:   chroma/
+# (as in config.py CHROMA_DIR="chroma")
+# Ignore any accidental/old indices:
+.chroma/
+chroma_db/
+chroma_tmp/
+
+# Conversation logs (per-session memory)
+data/memory/
+data/memory/*.jsonl
+
+# Notebooks and temp
+*.ipynb_checkpoints
