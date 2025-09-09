@@ -4,7 +4,6 @@ import json
 import re
 import streamlit as st
 import pandas as pd
-from datasets import Dataset as HFDataset
 
 from config import PDF_LOCAL_PATH, PDF_NAME
 from answer_gen import answer_query
@@ -216,6 +215,16 @@ with tab_eval:
                 if usable.empty:
                     st.error("All answers were empty. Try again or adjust settings.")
                     st.stop()
+                try:
+                        from datasets import Dataset as HFDataset
+                except Exception as e:
+                       st.error(
+                     "The 'datasets' package failed to import. "
+                      "This is only needed for the Evaluation tab.\n\n"
+                      f"Details: {e}"
+                         )
+                       st.stop()
+
 
                 hf_ds = HFDataset.from_pandas(usable)
 
